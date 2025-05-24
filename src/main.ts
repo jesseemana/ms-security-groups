@@ -14,7 +14,7 @@ app.get('/healthz', (_req: Request, res: Response) => {
 })
 
 app.get('/api/security-groups', async (req: Request, res: Response) => {
-  const token = req.body
+  const { token } = req.body
   try {
     const results = await axios.get('https://graph.microsoft.com/v1.0/me/memberOf', 
     {
